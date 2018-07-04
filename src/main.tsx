@@ -1,9 +1,14 @@
 import * as React from 'react'
-import { render } from 'react-dom'
+import ReactDOM, {render} from 'react-dom'
 
-import TodoList from './TodoList'
+import TodoList from './components/todoList/component'
+import {Provider} from 'react-redux';
 
-render(
-    <TodoList/>,
+import {default as store} from './store/store'
+
+ReactDOM.render(
+    <Provider store={store}>
+        <TodoList />
+    </Provider>,
     document.getElementById('app') as Element
 )
