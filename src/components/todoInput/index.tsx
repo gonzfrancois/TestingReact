@@ -47,9 +47,7 @@ export default class TodoInput extends React.Component<Props, InternalState> {
     }
 
     render () {
-        console.log("render", this.state, this.props)
         let { newTodo } = this.state
-
         return (
             <div>
             <input className="new-todo"
@@ -62,7 +60,7 @@ export default class TodoInput extends React.Component<Props, InternalState> {
                        }
                    }}
             />
-                <span>{Math.random()}</span>
+                <span> - {Math.random()}</span>
             </div>
         )
     }

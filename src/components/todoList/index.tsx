@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Todo } from './models'
+import TodoItem from '../TodoItem';
 
 interface Props extends StateProps, DispatchProps {
 
@@ -50,15 +51,7 @@ export default class TodoList extends React.Component<Props, InternalState> {
                 />
                 <ul className="todo-list">
                     {this.props.todos.map((todo, index) =>
-                        <li key={index}
-                            onClick={e => {
-                                this._toggle(todo.id)
-                            }}>
-                            <span>{todo.title}</span>
-                            <span>&nbsp;-&nbsp;</span>
-                            <span>checked : {todo.completed ? 'oui' : 'non'}</span>
-                            <span>{Math.random()}</span>
-                        </li>
+                        <TodoItem todo={todo} onClick={this.props.onToggle} />
                     )}
                 </ul>
             </section>
