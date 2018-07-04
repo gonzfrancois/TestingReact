@@ -1,7 +1,7 @@
 import { createStore } from 'redux'
-import { reducer as TodoReducer } from '../shared/reducers'
+import { reducer } from './rootReducer'
 
-const store = createStore(TodoReducer)
+const store = createStore(reducer)
 store.subscribe(()=> {
     console.log("Store à changer", store.getState())
 })

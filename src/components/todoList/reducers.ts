@@ -1,12 +1,11 @@
-import { Todo } from '../components/todoList/models'
-import {Action, ActionTypes} from '../components/todoList/actions';
+import { Todo } from './models'
+import {Action, ActionTypes} from './actions';
 
 export interface State {
     todos: Todo[]
 }
 
-// Define our initialState
-const initialState: State = {
+export const initialState: State = {
     todos: []
 }
 
@@ -22,7 +21,6 @@ export function reducer(state: State = initialState, action: Action) {
         }
 
         case ActionTypes.TOGGLE_TODO: {
-            console.log("Toggle",action.payload)
             const { todoId } = action.payload
             return {
                 ...state,

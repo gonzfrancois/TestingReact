@@ -32,10 +32,11 @@ export default class TodoList extends React.Component<TodoListProps, TodoListSta
 
     componentDidMount () {
         this.unsubscribe = store.subscribe(() => {
-            this.setState({
-                newTodo: '',
-                todos: store.getState().todos
-            })
+            // this.setState({
+            //     newTodo: '',
+            //     todos: store.getState().todos
+            // })
+            this.setState({newTodo: '', todos: store.getState().todoList.todos})
         })
     }
 
