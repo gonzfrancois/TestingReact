@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Todo } from './models'
 
 interface Props extends StateProps, DispatchProps {
@@ -43,7 +43,6 @@ export default class TodoList extends React.Component<Props, InternalState> {
     render () {
         console.log("render", this.state, this.props)
         let { newTodo } = this.state
-
         return (
             <section className="main">
                 <input className="toggle-all"
@@ -58,6 +57,7 @@ export default class TodoList extends React.Component<Props, InternalState> {
                             <span>{todo.title}</span>
                             <span>&nbsp;-&nbsp;</span>
                             <span>checked : {todo.completed ? 'oui' : 'non'}</span>
+                            <span>{Math.random()}</span>
                         </li>
                     )}
                 </ul>

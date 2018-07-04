@@ -25,7 +25,10 @@ export default class TodoList extends React.Component<Props, InternalState> {
 
     render () {
         return (
-            <h2>Cochées : {this.props.todoCounter}</h2>
+            <h2>
+                <span>Cochées : {this.props.todoCounter}</span>
+                <span>rd : {Math.random()}</span>
+            </h2>
         )
     }
 }

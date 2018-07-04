@@ -27,6 +27,12 @@ export default class TodoInput extends React.Component<Props, InternalState> {
         this._handleChange = this._handleChange.bind(this)
     }
 
+    componentDidMount(){
+        for(var i = 0; i <= 20; i++ ){
+            this.props.onSubmit('title'+i)
+        }
+    }
+
     _handleChange(value: string) {
         this.setState({newTodo: value})
     }
@@ -45,6 +51,7 @@ export default class TodoInput extends React.Component<Props, InternalState> {
         let { newTodo } = this.state
 
         return (
+            <div>
             <input className="new-todo"
                    placeholder="What needs to be done?"
                    value={newTodo}
@@ -55,6 +62,8 @@ export default class TodoInput extends React.Component<Props, InternalState> {
                        }
                    }}
             />
+                <span>{Math.random()}</span>
+            </div>
         )
     }
 }
