@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux'
-import * as fromTodos from '../components/todoList/reducers'
+import * as fromTodoList from '../reducers/index'
 
 export interface State {
-    todoList: fromTodos.State
+    todoList: fromTodoList.State
 }
 
 export const initialState: State = {
-    todoList: fromTodos.initialState
+    todoList: fromTodoList.initialState
 }
 
 export const reducer = combineReducers<State>({
-    todoList: fromTodos.reducer
+    todoList: fromTodoList.reducer
 })
