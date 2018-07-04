@@ -16,12 +16,12 @@ let config = {
     },
     module: {
         rules: [
-            {
-                test: /\.tsx?/,
-                loader : 'tslint-loader',
-                enforce: 'pre',
-                exclude: [/node_modules/]
-            },
+            // {
+            //     test: /\.tsx?/,
+            //     loader : 'tslint-loader',
+            //     enforce: 'pre',
+            //     exclude: [/node_modules/]
+            // },
             {
                 test: /\.tsx?/,
                 loader : 'ts-loader',
