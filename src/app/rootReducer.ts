@@ -1,14 +1,15 @@
 import { combineReducers } from 'redux'
-import * as fromTodoList from '../reducers/index'
+import * as authReducer from '../app/Auth/duck/reducers'
+
 
 export interface State {
-    todoList: fromTodoList.State
+    user: authReducer.State
 }
 
 export const initialState: State = {
-    todoList: fromTodoList.initialState
+    user: authReducer.initialState
 }
 
 export const reducer = combineReducers<State>({
-    todoList: fromTodoList.reducer
+    user: authReducer.reducer
 })

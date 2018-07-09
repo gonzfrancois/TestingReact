@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { State } from "../rootReducer"
+import { State } from "../../app/rootReducer"
 import { addTodo } from '../../actions/index'
 import TodoInput, {DispatchProps, StateProps} from '../../components/todoInput'
 import { Dispatch } from 'redux';

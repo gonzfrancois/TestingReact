@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { State } from "../rootReducer"
+import { State } from "../../app/rootReducer"
 import { toggleTodo } from '../../actions'
 import TodoList, {DispatchProps, StateProps} from '../../components/todoList'
 import { getTodos } from '../selectors';

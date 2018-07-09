@@ -4,7 +4,7 @@ import { reducer } from './rootReducer'
 const store = createStore(reducer)
 
 store.subscribe(()=> {
-    console.log("Store à changer", store.getState())
+    console.log("Store a changer", store.getState())
 })
 
 export default store

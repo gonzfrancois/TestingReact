@@ -3885,7 +3885,7 @@ var Dropdown = function ($$$1) {
     DATA_TOGGLE: '[data-toggle="dropdown"]',
     FORM_CHILD: '.dropdown form',
     MENU: '.dropdown-menu',
-    NAVBAR_NAV: '.navbar-nav',
+    NAVBAR_NAV: '.Navbar-nav',
     VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled)'
   };
   var AttachmentMap = {
@@ -4072,7 +4072,7 @@ var Dropdown = function ($$$1) {
     };
 
     _proto._detectNavbar = function _detectNavbar() {
-      return $$$1(this._element).closest('.navbar').length > 0;
+      return $$$1(this._element).closest('.Navbar').length > 0;
     };
 
     _proto._getPopperConfig = function _getPopperConfig() {
@@ -4355,7 +4355,7 @@ var Modal = function ($$$1) {
     DATA_DISMISS: '[data-dismiss="modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
     STICKY_CONTENT: '.sticky-top',
-    NAVBAR_TOGGLER: '.navbar-toggler'
+    NAVBAR_TOGGLER: '.Navbar-toggler'
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -4729,7 +4729,7 @@ var Modal = function ($$$1) {
           var actualMargin = $$$1(element)[0].style.marginRight;
           var calculatedMargin = $$$1(element).css('margin-right');
           $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
-        }); // Adjust navbar-toggler margin
+        }); // Adjust Navbar-toggler margin
 
         $$$1(Selector.NAVBAR_TOGGLER).each(function (index, element) {
           var actualMargin = $$$1(element)[0].style.marginRight;
@@ -4751,7 +4751,7 @@ var Modal = function ($$$1) {
         if (typeof padding !== 'undefined') {
           $$$1(element).css('padding-right', padding).removeData('padding-right');
         }
-      }); // Restore sticky content and navbar-toggler margin
+      }); // Restore sticky content and Navbar-toggler margin
 
       $$$1(Selector.STICKY_CONTENT + ", " + Selector.NAVBAR_TOGGLER).each(function (index, element) {
         var margin = $$$1(element).data('margin-right');

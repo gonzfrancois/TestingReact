@@ -12,8 +12,14 @@ let config = {
         extensions : ['.js', '.ts', '.tsx']
     },
     devServer: {
-        noInfo: true
+        noInfo: true,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+
+
     },
+    devtool: "source-map",
     module: {
         rules: [
             // {

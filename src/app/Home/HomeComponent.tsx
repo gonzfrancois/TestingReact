@@ -1,8 +1,6 @@
 import * as React from 'react'
-import Navbar from '../navbar/NavbarContainer';
-import Movies from '../Movies/MoviesContainer';
-import { BrowserRouter as Router, Route, Link, match } from "react-router-dom";
-
+import Navbar from '../Navbar/NavbarContainer';
+import Auth from '../Auth/AuthComponent';
 
 interface Props extends StateProps, DispatchProps { }
 
@@ -22,7 +20,6 @@ export default class Home extends React.Component<Props, InternalState> {
             <section className="App">
                 <h1>App</h1>
                 <Navbar/>
-                <Movies/>
             </section>
         )
     }
