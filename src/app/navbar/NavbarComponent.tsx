@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {Link} from 'react-router-dom';
 
 interface Props extends StateProps, DispatchProps { }
 
@@ -16,6 +17,7 @@ export default class Navbar extends React.Component<Props, InternalState> {
         return (
             <section className="navBar">
                 <h2>Navbar</h2>
+                <Link to={`/movies`}>Movies</Link>
             </section>
         )
     }

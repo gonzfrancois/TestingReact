@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import HomeComponent from './MoviesComponent';
+import MoviesComponent from './MoviesComponent';
 
-const Movies = connect()(HomeComponent)
+const Movies = connect()(MoviesComponent)
 
 export default Movies
