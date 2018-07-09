@@ -13,7 +13,7 @@ const history = createBrowserHistory()
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
+        <Router >
             <Switch>
                 <Route path="/" exact component={Home} />
                 <RestrictedRoute path="/movies" component={Movies} />

@@ -1,4 +1,3 @@
-///<reference path="../../../node_modules/@types/react-router/index.d.ts"/>
 import * as React from 'react'
 import {Redirect, withRouter} from 'react-router-dom';
 

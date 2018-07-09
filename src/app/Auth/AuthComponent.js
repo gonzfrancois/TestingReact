@@ -8,7 +8,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-///<reference path="../../../node_modules/@types/react-router/index.d.ts"/>
 import * as React from 'react';
 import { Redirect } from 'react-router-dom';
 var Auth = /** @class */ (function (_super) {

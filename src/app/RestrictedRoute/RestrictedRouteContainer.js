@@ -8,7 +8,11 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 };
 import { connect } from 'react-redux';
 import PrivateRouteComponent from './RestrictedRouteComponent';
+import { login } from '../Auth/duck/actions';
 var mapStateToProps = function (state, ownProps) { return (__assign({}, ownProps, { isLogged: state.user.isLogged })); };
-var RestrictedRoute = connect(mapStateToProps)(PrivateRouteComponent);
+var mapDispatchToProps = function (dispatch) { return ({
+    Login: function (username, password) { return dispatch(login(username, password)); }
+}); };
+var RestrictedRoute = connect(mapStateToProps, mapDispatchToProps)(PrivateRouteComponent);
 export default RestrictedRoute;
 //# sourceMappingURL=RestrictedRouteContainer.js.map
