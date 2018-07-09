@@ -2,7 +2,7 @@ const path = require ('path')
 const webpack = require('webpack')
 
 let config = {
-    entry: './src/main.tsx',
+    entry: './src/App/main.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',

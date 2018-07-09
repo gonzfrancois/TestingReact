@@ -1,15 +1,12 @@
 import * as React from 'react'
 import ReactDOM, {render} from 'react-dom'
 import {Provider} from 'react-redux';
-
-import store from './store/store'
-
-
-import TodoAppComponent from './store/containers/TodoApp';
+import store from '../store/store'
+import Home from './home/HomeContainer';
 
 ReactDOM.render(
     <Provider store={store}>
-        <TodoAppComponent/>
+        <Home/>
     </Provider>,
     document.getElementById('app') as Element
 )

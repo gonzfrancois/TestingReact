@@ -1,6 +1,6 @@
 {
     "files": [
-        "src/main.tsx"
+        "src/app/main.tsx"
     ],
     "compilerOptions": {
         "target": "es5",
