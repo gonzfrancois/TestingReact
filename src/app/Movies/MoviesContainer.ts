@@ -1,13 +1,25 @@
 import { connect } from 'react-redux'
-import MoviesComponent from './MoviesComponent';
-import {login, logout} from '../Auth/duck/actions';
-import {DispatchProps} from './MoviesComponent';
+import MoviesComponent, {DispatchProps, StateProps} from './MoviesComponent';
 import {Dispatch} from 'redux'
+import {withRouter} from 'react-router';
+import {getAll, getAllSuccess, getAllFailure} from './duck/actions';
+import {State} from '../rootReducer';
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-    Logout: () => dispatch(logout())
+const mapStateToProps = (state: State): StateProps => ({
+    movies: state.moviesList.movies
 });
 
-const Movies = connect(null, mapDispatchToProps)(MoviesComponent)
 
-export default Movies
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+    GetMovies: () => dispatch(getAll()).request
+        .then(response => {
+            dispatch(getAllSuccess(response.data.Search))
+        })
+        .catch(error => {
+            dispatch(getAllFailure(error))
+        })
+});
+
+const Movies = connect(mapStateToProps, mapDispatchToProps)(MoviesComponent)
+
+export default withRouter(Movies)

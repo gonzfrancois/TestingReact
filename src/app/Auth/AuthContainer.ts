@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
 import AuthComponent, {DispatchProps, StateProps} from './AuthComponent';
-import {State} from '../rootReducer';
 import {Dispatch} from 'redux';
-import {login} from './duck/actions';
+import {login, logout} from './duck/actions';
 
-const mapStateToProps = (state: State): StateProps => ({
+const mapStateToProps = (state: any): StateProps => ({
     isLogged: state.user.isLogged
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-    Login: (username: string, password: string) => dispatch(login(username, password))
+    Login: (username: string, password: string) => dispatch(login(username, password)),
+    Logout: () => dispatch(logout())
 });
 
 const Auth = connect(mapStateToProps, mapDispatchToProps)(AuthComponent)

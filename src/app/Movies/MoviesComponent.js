@@ -12,12 +12,31 @@ import * as React from 'react';
 var Movies = /** @class */ (function (_super) {
     __extends(Movies, _super);
     function Movies(props) {
-        return _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this._navigateToMovie = _this._navigateToMovie.bind(_this);
+        return _this;
     }
+    Movies.prototype.componentDidMount = function () {
+        this.props.GetMovies();
+    };
+    Movies.prototype._navigateToMovie = function (id) {
+        this.props.history.push(this.props.location.pathname + "/" + id);
+    };
     Movies.prototype.render = function () {
         var _this = this;
+        var movies = this.props.movies;
         return (React.createElement("section", { className: "movies" },
-            React.createElement("h3", { onClick: function (e) { return _this.props.Logout(); } }, "Exit")));
+            React.createElement("h3", null, "Movies"),
+            React.createElement("table", null,
+                React.createElement("thead", null,
+                    React.createElement("tr", null,
+                        React.createElement("th", null, "Title"),
+                        React.createElement("th", null, "Year"))),
+                React.createElement("tbody", null, movies.map(function (movie, index) {
+                    return (React.createElement("tr", { key: index, onClick: function (e) { return _this._navigateToMovie(movie.imdbID); } },
+                        React.createElement("td", { key: movie.imdbID + 'title' }, movie.Title),
+                        React.createElement("td", { key: movie.imdbID + 'year' }, movie.Year)));
+                })))));
     };
     return Movies;
 }(React.Component));

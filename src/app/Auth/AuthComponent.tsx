@@ -7,7 +7,8 @@ export interface StateProps {
     isLogged: boolean
 }
 export interface DispatchProps {
-    Login: (username: string, password: string) => void
+    Login: (username: string, password: string) => void,
+    Logout: () => void
 }
 
 interface InternalState {
@@ -43,8 +44,14 @@ export default class Auth extends React.PureComponent<Props, InternalState> {
 
     render () {
         if(this.props.isLogged){
-            console.log("redirect", this.props)
-            return (<Redirect to={'/'}/>)
+            return (
+                <div>
+                    <span>Tou are logged in</span>
+                    <br/>
+                    <button onClick={e => this.props.Logout() }>Logout</button>
+                </div>
+            )
+
         }
         return (
             <div id="login">

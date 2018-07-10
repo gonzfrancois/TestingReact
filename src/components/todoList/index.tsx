@@ -42,7 +42,6 @@ export default class TodoList extends React.Component<Props, InternalState> {
     }
 
     render () {
-        console.log("render", this.state, this.props)
         let { newTodo } = this.state
         return (
             <section className="main">

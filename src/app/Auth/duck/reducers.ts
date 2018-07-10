@@ -13,7 +13,6 @@ export const initialState: State = {
 export function reducer(state: State = initialState, action: Action) {
     switch (action.type) {
         case ActionTypes.LOGIN: {
-            console.log("reducer")
             const { username } = action.payload;
             return {
                 ...state,

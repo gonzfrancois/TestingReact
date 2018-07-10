@@ -1,5 +1,7 @@
 import * as React from 'react'
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
+import Movies from '../Movies/MoviesContainer';
+import RestrictedRoute from '../RestrictedRoute/RestrictedRouteContainer';
 
 interface Props extends StateProps, DispatchProps { }
 
@@ -17,7 +19,14 @@ export default class Navbar extends React.Component<Props, InternalState> {
         return (
             <section className="navBar">
                 <h2>Navbar</h2>
-                <Link to={`/movies`}>Movies</Link>
+                <ul>
+                    <li>
+                        <Link to={`/login`}>Login</Link>
+                    </li>
+                    <li>
+                        <Link to={`/movies`}>Movies</Link>
+                    </li>
+                </ul>
             </section>
         )
     }

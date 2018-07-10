@@ -31,7 +31,6 @@ var TodoList = /** @class */ (function (_super) {
     };
     TodoList.prototype.render = function () {
         var _this = this;
-        console.log("render", this.state, this.props);
         var newTodo = this.state.newTodo;
         return (React.createElement("section", { className: "main" },
             React.createElement("input", { className: "toggle-all", type: "checkbox" }),

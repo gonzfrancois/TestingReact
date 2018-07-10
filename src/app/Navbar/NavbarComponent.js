@@ -18,7 +18,11 @@ var Navbar = /** @class */ (function (_super) {
     Navbar.prototype.render = function () {
         return (React.createElement("section", { className: "navBar" },
             React.createElement("h2", null, "Navbar"),
-            React.createElement(Link, { to: "/movies" }, "Movies")));
+            React.createElement("ul", null,
+                React.createElement("li", null,
+                    React.createElement(Link, { to: "/login" }, "Login")),
+                React.createElement("li", null,
+                    React.createElement(Link, { to: "/movies" }, "Movies")))));
     };
     return Navbar;
 }(React.Component));

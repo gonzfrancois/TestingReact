@@ -8,6 +8,8 @@ export interface LoginAction { type: ActionTypes.LOGIN, payload: { username: str
 export interface LogoutAction { type: ActionTypes.LOGOUT, payload: { } }
 
 export function login(username: string, password: string): LoginAction {
+
+
     return {
         type: ActionTypes.LOGIN,
         payload: {

@@ -9,7 +9,6 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import * as React from 'react';
-import { Redirect } from 'react-router-dom';
 var Auth = /** @class */ (function (_super) {
     __extends(Auth, _super);
     function Auth(props) {
@@ -35,8 +34,10 @@ var Auth = /** @class */ (function (_super) {
     Auth.prototype.render = function () {
         var _this = this;
         if (this.props.isLogged) {
-            console.log("redirect", this.props);
-            return (React.createElement(Redirect, { to: '/' }));
+            return (React.createElement("div", null,
+                React.createElement("span", null, "Tou are logged in"),
+                React.createElement("br", null),
+                React.createElement("button", { onClick: function (e) { return _this.props.Logout(); } }, "Logout")));
         }
         return (React.createElement("div", { id: "login" },
             React.createElement("label", { htmlFor: "username" }, "user name :"),

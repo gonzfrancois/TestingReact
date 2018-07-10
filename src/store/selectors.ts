@@ -1,6 +1,6 @@
 import { State } from '../app/rootReducer'
 import { createSelector } from 'reselect'
 
-const getTodosState = ((state: State) => state.todoList)
+const getUserState = ((state: State) => state.user)
 
-export const getTodos = createSelector([getTodosState], s => s.todos)
+export const getTodos = createSelector([getUserState], s => s.todos)

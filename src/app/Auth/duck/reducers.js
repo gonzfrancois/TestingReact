@@ -15,7 +15,6 @@ export function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     switch (action.type) {
         case ActionTypes.LOGIN: {
-            console.log("reducer");
             var username = action.payload.username;
             return __assign({}, state, { username: username, isLogged: true });
         }
