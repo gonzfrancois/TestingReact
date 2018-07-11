@@ -13,13 +13,11 @@ export var initialState = {
 export function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     switch (action.type) {
-        case ActionTypes.GET_ALL_SUCCESS: {
+        case ActionTypes.GET_ALL_MOVIES_SUCCESS: {
             var movies = action.payload.movies;
-            console.log("reducer", movies);
             return __assign({}, state, { movies: movies });
-            console.log("state", state);
         }
-        case ActionTypes.GET_ALL_FAILURE: {
+        case ActionTypes.GET_ALL_MOVIES_FAILURE: {
             return __assign({}, state, { movies: [] });
         }
         default:

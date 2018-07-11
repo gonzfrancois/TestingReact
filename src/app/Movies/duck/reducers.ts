@@ -1,6 +1,5 @@
-import {Action, ActionTypes} from './actions';
-import Movies from '../MoviesComponent';
-import Movie from '../Movie';
+import {Action, ActionTypes } from './actions';
+import {Movie} from './models';
 
 export interface State {
     movies: Movie[]
@@ -12,17 +11,15 @@ export const initialState: State = {
 
 export function reducer(state: State = initialState, action: Action) {
     switch (action.type) {
-        case ActionTypes.GET_ALL_SUCCESS: {
+        case ActionTypes.GET_ALL_MOVIES_SUCCESS: {
             const { movies } = action.payload;
-            console.log("reducer",movies)
             return {
                 ...state,
                 movies: movies
             }
-            console.log("state",state)
         }
 
-        case ActionTypes.GET_ALL_FAILURE: {
+        case ActionTypes.GET_ALL_MOVIES_FAILURE: {
             return {
                 ...state,
                 movies: []
