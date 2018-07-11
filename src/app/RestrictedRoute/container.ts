@@ -3,7 +3,7 @@ import PrivateRouteComponent, {StateProps} from './duck/component';
 import {State} from '../rootReducer';
 import {RouteProps} from 'react-router';
 import {login, logout} from '../Auth/duck/actions';
-import {DispatchProps} from '../Auth/AuthComponent';
+import {DispatchProps} from '../Auth/duck/component';
 import {Dispatch} from 'redux'
 
 const mapStateToProps = (state: State, ownProps: RouteProps): StateProps => ({

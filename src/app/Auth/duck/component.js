@@ -9,9 +9,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import * as React from 'react';
-var Auth = /** @class */ (function (_super) {
-    __extends(Auth, _super);
-    function Auth(props) {
+var ViewComponent = /** @class */ (function (_super) {
+    __extends(ViewComponent, _super);
+    function ViewComponent(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
             user: '',
@@ -22,16 +22,16 @@ var Auth = /** @class */ (function (_super) {
         _this._submit.bind(_this._submit);
         return _this;
     }
-    Auth.prototype._handleChangeUser = function (value) {
+    ViewComponent.prototype._handleChangeUser = function (value) {
         this.setState({ user: value });
     };
-    Auth.prototype._handleChangePwd = function (value) {
+    ViewComponent.prototype._handleChangePwd = function (value) {
         this.setState({ pwd: value });
     };
-    Auth.prototype._submit = function () {
+    ViewComponent.prototype._submit = function () {
         this.props.Login(this.state.user, this.state.pwd);
     };
-    Auth.prototype.render = function () {
+    ViewComponent.prototype.render = function () {
         var _this = this;
         if (this.props.isLogged) {
             return (React.createElement("div", null,
@@ -47,7 +47,7 @@ var Auth = /** @class */ (function (_super) {
             React.createElement("button", { onClick: function (e) { return _this._submit(); } },
                 React.createElement("span", null, "Submit"))));
     };
-    return Auth;
+    return ViewComponent;
 }(React.PureComponent));
-export default Auth;
-//# sourceMappingURL=AuthComponent.js.map
+export { ViewComponent };
+//# sourceMappingURL=component.js.map

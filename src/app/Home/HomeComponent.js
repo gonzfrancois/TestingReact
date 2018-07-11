@@ -12,7 +12,7 @@ import * as React from 'react';
 import Navbar from '../Navbar/container';
 import Movies from '../Movies/container';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Auth from '../Auth/AuthContainer';
+import Auth from '../Auth/container';
 import RestrictedRoute from '../RestrictedRoute/container';
 import MovieDetails from '../MovieDetails/container';
 var Home = /** @class */ (function (_super) {

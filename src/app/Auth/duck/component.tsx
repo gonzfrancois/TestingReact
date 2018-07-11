@@ -1,5 +1,4 @@
 import * as React from 'react'
-import {Redirect, withRouter} from 'react-router-dom';
 
 interface Props extends StateProps, DispatchProps { }
 
@@ -16,7 +15,7 @@ interface InternalState {
     pwd: string
 }
 
-export default class Auth extends React.PureComponent<Props, InternalState> {
+export class ViewComponent extends React.PureComponent<Props, InternalState> {
     constructor (props: Props) {
         super(props)
 
@@ -51,7 +50,6 @@ export default class Auth extends React.PureComponent<Props, InternalState> {
                     <button onClick={e => this.props.Logout() }>Logout</button>
                 </div>
             )
-
         }
         return (
             <div id="login">

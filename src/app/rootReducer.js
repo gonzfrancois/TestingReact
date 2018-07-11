@@ -7,7 +7,7 @@ export var initialState = {
     moviesState: moviesReducer.initialState,
     movieState: movieReducer.initialState
 };
-export var reducer = combineReducers({
+export var RootReducer = combineReducers({
     userState: authReducer.reducer,
     moviesState: moviesReducer.reducer,
     movieState: movieReducer.reducer

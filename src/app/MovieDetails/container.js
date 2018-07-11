@@ -6,13 +6,7 @@ var mapStateToProps = function (state) { return ({
 }); };
 var mapDispatchToProps = function (dispatch) { return ({
     GetMovie: function (id) {
-        dispatch(MovieDetailsComponent.GetById(id)).request
-            .then(function (respose) {
-            dispatch(MovieDetailsComponent.GetByIdSuccess(respose.data));
-        })
-            .catch(function (error) {
-            dispatch(MovieDetailsComponent.GetByIdFailure(error));
-        });
+        dispatch(MovieDetailsComponent.GetById(id));
     },
     Reset: function () { return dispatch(MovieDetailsComponent.ResetMovieStore()); }
 }); };

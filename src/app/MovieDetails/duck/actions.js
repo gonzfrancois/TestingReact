@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as MovieDetailsComponent from './index';
 export var ActionTypes;
 (function (ActionTypes) {
     ActionTypes["GET_MOVIE_BY_ID"] = "[Movies] GetByMovieId";
@@ -8,10 +9,21 @@ export var ActionTypes;
 })(ActionTypes || (ActionTypes = {}));
 var ROOT_URL = 'http://www.omdbapi.com/?apikey=b736a54f&';
 export function GetById(id) {
-    var request = axios.get(ROOT_URL + "i=" + id);
+    return function (dispatch) {
+        dispatch(GetByIdBegin());
+        return axios.get(ROOT_URL + "i=" + id)
+            .then(function (respose) {
+            dispatch(MovieDetailsComponent.GetByIdSuccess(respose.data));
+        })
+            .catch(function (error) {
+            dispatch(MovieDetailsComponent.GetByIdFailure(error));
+        });
+    };
+}
+export function GetByIdBegin() {
     return {
         type: ActionTypes.GET_MOVIE_BY_ID,
-        request: request
+        payload: {}
     };
 }
 export function GetByIdSuccess(movie) {

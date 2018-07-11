@@ -6,7 +6,7 @@ var mapStateToProps = function (globalState) { return ({
 }); };
 var ROOT_URL = 'http://www.omdbapi.com/?apikey=b736a54f&';
 var mapDispatchToProps = function (dispatch) { return ({
-    GetMovies: function () { return MoviesComponent.getAllMovies(dispatch); }
+    GetMovies: function () { return dispatch(MoviesComponent.getAllMovies()); }
 }); };
 var Movies = connect(mapStateToProps, mapDispatchToProps)(MoviesComponent.ViewComponent);
 export default withRouter(Movies);

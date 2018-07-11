@@ -4,6 +4,7 @@ import {withRouter} from 'react-router';
 import {State} from '../rootReducer';
 
 import * as MovieDetailsComponent from './duck'
+import {ActionTypes} from './duck';
 
 const mapStateToProps = (state: State): MovieDetailsComponent.StateProps => ({
     movie: state.movieState.movie as MovieDetailsComponent.MovieDetails
@@ -11,13 +12,7 @@ const mapStateToProps = (state: State): MovieDetailsComponent.StateProps => ({
 
 const mapDispatchToProps = (dispatch: Dispatch): MovieDetailsComponent.DispatchProps => ({
     GetMovie: (id: string) => {
-        dispatch(MovieDetailsComponent.GetById(id)).request
-            .then(respose => {
-                dispatch(MovieDetailsComponent.GetByIdSuccess(respose.data))
-            })
-            .catch(error => {
-                dispatch(MovieDetailsComponent.GetByIdFailure(error))
-            })
+        dispatch<any>(MovieDetailsComponent.GetById(id))
     },
 
     Reset: () => dispatch(MovieDetailsComponent.ResetMovieStore())

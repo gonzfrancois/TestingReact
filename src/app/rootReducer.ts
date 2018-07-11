@@ -17,7 +17,7 @@ export const initialState: State = {
 
 }
 
-export const reducer = combineReducers({
+export const RootReducer = combineReducers({
     userState: authReducer.reducer,
     moviesState: moviesReducer.reducer,
     movieState: movieReducer.reducer

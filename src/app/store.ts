@@ -1,10 +1,14 @@
-import { createStore } from 'redux'
-import { reducer } from './rootReducer'
+import { createStore, applyMiddleware } from 'redux'
+import { RootReducer } from './rootReducer'
+import thunk from 'redux-thunk';
 
-const store = createStore(reducer)
+const store = createStore(
+    RootReducer,
+    applyMiddleware(thunk)
+)
 
 store.subscribe(()=> {
-    console.log("Store a changer", store.getState())
+    console.log("Store a changé", store.getState())
 })
 
 export default store

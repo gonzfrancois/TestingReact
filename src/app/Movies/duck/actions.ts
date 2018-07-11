@@ -14,16 +14,18 @@ export interface GetMoviesFailureAction { type: ActionTypes.GET_ALL_MOVIES_FAILU
 
 const ROOT_URL = 'http://www.omdbapi.com/?apikey=b736a54f&'
 
-export function getAllMovies(dispatch: Dispatch) {
-    dispatch(getAllMoviesBegin())
+export function getAllMovies() {
+    return function (dispatch: Dispatch) {
+        dispatch(getAllMoviesBegin())
 
-    return axios.get(`${ROOT_URL}s=te&page=1`)
-        .then(response => {
-            dispatch(getAllMoviesSuccess(response.data.Search))
-        })
-        .catch(error => {
-            dispatch(getAllMoviesFailure(error))
-        })
+        return axios.get(`${ROOT_URL}s=te&page=1`)
+            .then(response => {
+                dispatch(getAllMoviesSuccess(response.data.Search))
+            })
+            .catch(error => {
+                dispatch(getAllMoviesFailure(error))
+            })
+    }
 }
 
 export function getAllMoviesBegin(){
