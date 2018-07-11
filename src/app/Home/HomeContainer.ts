@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import HomeComponent from './HomeComponent';
+import * as HomeComponent from './duck';
 
-const Home = connect()(HomeComponent)
+const Home = connect()(HomeComponent.ViewComponent)
 
 export default Home

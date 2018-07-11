@@ -15,6 +15,7 @@ export interface GetMoviesFailureAction { type: ActionTypes.GET_ALL_MOVIES_FAILU
 const ROOT_URL = 'http://www.omdbapi.com/?apikey=b736a54f&'
 
 export function getAllMovies() {
+
     return function (dispatch: Dispatch) {
         dispatch(getAllMoviesBegin())
 
@@ -26,6 +27,7 @@ export function getAllMovies() {
                 dispatch(getAllMoviesFailure(error))
             })
     }
+
 }
 
 export function getAllMoviesBegin(){

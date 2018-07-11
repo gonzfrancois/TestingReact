@@ -9,21 +9,22 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import * as React from 'react';
-import Navbar from '../Navbar/container';
-import Movies from '../Movies/container';
+import Navbar from '../../Navbar/container';
+import Movies from '../../Movies/container';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Auth from '../Auth/container';
-import RestrictedRoute from '../RestrictedRoute/container';
-import MovieDetails from '../MovieDetails/container';
-var Home = /** @class */ (function (_super) {
-    __extends(Home, _super);
-    function Home(props) {
+import Auth from '../../Auth/container';
+import RestrictedRoute from '../../RestrictedRoute/container';
+import MovieDetails from '../../MovieDetails/container';
+import { t } from 'i18next';
+var ViewComponent = /** @class */ (function (_super) {
+    __extends(ViewComponent, _super);
+    function ViewComponent(props) {
         return _super.call(this, props) || this;
     }
-    Home.prototype.render = function () {
+    ViewComponent.prototype.render = function () {
         return (React.createElement(Router, null,
             React.createElement("section", { className: "App" },
-                React.createElement("h1", null, "App"),
+                React.createElement("h1", null, t('@HEADER')),
                 React.createElement(Navbar, null),
                 React.createElement(Switch, null,
                     React.createElement(Route, { path: "/", exact: true, component: function () { return React.createElement("h1", null, "Welcome"); } }),
@@ -31,7 +32,7 @@ var Home = /** @class */ (function (_super) {
                     React.createElement(RestrictedRoute, { exact: true, path: "/movies/:id", component: MovieDetails }),
                     React.createElement(Route, { path: "/login", component: Auth })))));
     };
-    return Home;
+    return ViewComponent;
 }(React.Component));
-export default Home;
-//# sourceMappingURL=HomeComponent.js.map
+export { ViewComponent };
+//# sourceMappingURL=component.js.map

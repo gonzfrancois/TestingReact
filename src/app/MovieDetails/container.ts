@@ -4,7 +4,6 @@ import {withRouter} from 'react-router';
 import {State} from '../rootReducer';
 
 import * as MovieDetailsComponent from './duck'
-import {ActionTypes} from './duck';
 
 const mapStateToProps = (state: State): MovieDetailsComponent.StateProps => ({
     movie: state.movieState.movie as MovieDetailsComponent.MovieDetails
